@@ -1,4 +1,9 @@
 from scapy.all import *
+def expand(x):
+    yield x.name
+    while x.payload:
+        x = x.payload
+        yield x.name
 
 def parsePacket(packet):
 	global i
